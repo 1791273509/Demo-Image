@@ -14,11 +14,18 @@ import java.time.LocalDateTime;
 @Controller
 public class HelloController {
     public static int i = 1;
+    @RequestMapping("/l")
+    public String index1(){
+        System.out.println("首页");
+        log.info("访问次数: {} 时间:{}" ,i++, LocalDateTime.now());
+        return "hello.html";
+    }
     @RequestMapping("/")
     public String index(){
         System.out.println("首页");
         log.info("访问次数: {} 时间:{}" ,i++, LocalDateTime.now());
         return "index.html";
     }
+
 
 }
